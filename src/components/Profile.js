@@ -1,10 +1,20 @@
 import React from 'react'
 import Header from './HeaderProfile';
+import {useNavigate} from 'react-router-dom'
 import {ReactComponent as ReactLogo} from '../images/girl.svg';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 function Profile(){
+
+    const navigate=useNavigate()
+
+    const handelNavigateAge=()=>{
+        navigate('age')
+    }
+    const handelNavigateGender=()=>{
+        navigate('gender')
+    }
      return(
         <div className='wrapper'>
             <Header/>
@@ -20,9 +30,9 @@ function Profile(){
                         </div>
                         <div className='form__inputBox'>
                             <span for='ageYear' className='form__span'>سال تولد</span>
-                            <Link to='age'>
-                            <input type='text'  className='form__input' id='ageYear' placeholder='1371' readOnly ></input>
-                            </Link>  
+                            {/* <Link to='age'> */}
+                            <input type='text'  className='form__input' id='ageYear' placeholder='1371' onClick={handelNavigateAge} readOnly ></input>
+                            {/* </Link>   */}
                             <label for='ageYear' className='form__label'onClick={console.log('hgd')}>
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 10.0938V12.75H2.83582L11.1996 4.91583L8.36378 2.25958L0 10.0938ZM2.20816 11.3333H1.51244V10.6817L8.36378 4.26417L9.0595 4.91583L2.20816 11.3333ZM13.3926 1.86292L11.6231 0.205417C11.4718 0.06375 11.2828 0 11.0862 0C10.8896 0 10.7005 0.0708333 10.5568 0.205417L9.17294 1.50167L12.0088 4.15792L13.3926 2.86167C13.6876 2.58542 13.6876 2.13917 13.3926 1.86292Z" fill="#FE7A30"/>
@@ -31,9 +41,9 @@ function Profile(){
                         </div> 
                         <div className='form__inputBox'>
                             <span for='gender' className='form__span'>جنسیت</span>
-                            <Link to='Gender'>
-                            <input type='text'  className='form__input' id='gender' placeholder='خانم' readOnly></input>
-                            </Link>
+                            {/* <Link to='Gender'> */}
+                            <input type='text'  className='form__input' id='gender' placeholder='خانم' onClick={handelNavigateGender}  readOnly></input>
+                            {/* </Link> */}
                             <label for='gender' className='form__label'>
                             <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 10.0938V12.75H2.83582L11.1996 4.91583L8.36378 2.25958L0 10.0938ZM2.20816 11.3333H1.51244V10.6817L8.36378 4.26417L9.0595 4.91583L2.20816 11.3333ZM13.3926 1.86292L11.6231 0.205417C11.4718 0.06375 11.2828 0 11.0862 0C10.8896 0 10.7005 0.0708333 10.5568 0.205417L9.17294 1.50167L12.0088 4.15792L13.3926 2.86167C13.6876 2.58542 13.6876 2.13917 13.3926 1.86292Z" fill="#FE7A30"/>
@@ -60,9 +70,6 @@ function Profile(){
                     <a href='#' className='Footer__linkhome'>خانه</a>
                 </div>
             </div> 
-
-
-
         </div>
       )
 }

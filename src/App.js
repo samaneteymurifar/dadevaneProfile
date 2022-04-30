@@ -6,7 +6,6 @@ import Age from './components/Age'
 import Gender from './components/Gender'
 import Back from './components/Back'
 import { useState } from 'react'
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App(){
